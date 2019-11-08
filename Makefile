@@ -6,7 +6,7 @@
 #    By: cghael <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 17:11:16 by cghael            #+#    #+#              #
-#    Updated: 2019/11/08 14:46:51 by cghael           ###   ########.fr        #
+#    Updated: 2019/11/08 17:20:48 by cghael           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,13 +47,13 @@ all: $(NAME)
 
 $(NAME): $(O_FLS)
 		make -C $(LIB)
-		gcc $(FLAGS) $^  -L$(LIB) -lft -I$(SRC_DIR) -I$(LIB) -o $(NAME)
+		gcc $(FLAGS) $(addprefix $(SRC_DIR)/, $^) -L$(LIB) -lft -I$(SRC_DIR) -I$(LIB) -o $(NAME)
 
 %.o: %.c
-		gcc -c $(FLAGS) -I$(LIB) $< -o $@
+		gcc -c $(FLAGS) -I$(LIB) $< -o $(addprefix $(SRC_DIR)/, $@)
 
 clean:
-		rm -f $(O_FLS)
+		rm -f $(addprefix $(SRC_DIR)/, $(O_FLS))
 		make -C $(LIB) clean
 
 fclean: clean
