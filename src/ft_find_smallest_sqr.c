@@ -6,11 +6,45 @@
 /*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:07:22 by cghael            #+#    #+#             */
-/*   Updated: 2019/11/08 14:23:40 by cghael           ###   ########.fr       */
+/*   Updated: 2019/11/10 16:48:23 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit_head.h"
+
+/*
+** \brief			Check created root to valid (all tetr are in root).
+** \param	root	Created decision list.
+** 			tetr	List with all tetriminos.
+** \return	0		If root not correct.
+** 			count	Number of tetrimino.
+*/
+
+static int	ft_check_valid_root(t_dest *root, t_tet *tetr)
+{
+	t_dest	*tmp;
+	int		count1;
+	int		count2;
+
+	count1 = 0;
+	while (tetr)
+	{
+		count1++;
+		tetr = tetr->next;
+	}
+	count2 = 0;
+	tmp = root->down;
+	while (tmp != root)
+	{
+		if (tmp->name != tmp->up->name)
+			count2++;
+		tmp = tmp->down;
+	}
+	if (count1 == count2)
+		return (count1);
+	else
+		return (0);
+}
 
 /*
 ** \brief				Main recursive algorithm, finds decision in
@@ -70,10 +104,9 @@ int			ft_find_smallest_sqr(t_tet *tetr, int n, t_dest **root)
 	{
 		if (!(*root = ft_create_dlist(tetr, n)))
 			return (-1);
-		if ((*root)->down->name == 'A')
+		if ((n_tet = ft_check_valid_root(*root, tetr)) > 0)
 		{
 			stack = NULL;
-			n_tet = (*root)->up->name - 'A' + 1;
 			if ((res = ft_fillit(*root, (*root)->down, &stack, n_tet)) != 0)
 				break ;
 			ft_uncover_and_free(&stack, 2);

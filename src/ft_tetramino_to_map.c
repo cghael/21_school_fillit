@@ -24,7 +24,7 @@
 **			NULL	If smth wrong with malloc.
 */
 
-static t_dest	*ft_tetraminotostr(t_tet *tet)
+static t_dest	*ft_tetramino_to_str(t_tet *tet)
 {
 	t_dest	*node;
 	t_dest	*tmp;
@@ -89,7 +89,7 @@ t_dest			*ft_tetramino_to_map(t_dest *begin, t_tet *tetmap)
 	t_dest	*head;
 	int		i;
 
-	if (!(tmp = ft_tetraminotostr(tetmap)))
+	if (!(tmp = ft_tetramino_to_str(tetmap)))
 		return (NULL);
 	tmp->line = begin->up->line + 1;
 	ft_bind_node(&begin, &tmp);
