@@ -99,4 +99,15 @@ For the decision matrix, we used the following structure
 	    int			        line;
     }				t_dest;
     
+If we have the input, for example
+
+	##..    ....    ....    ....
+	.#..    ####    #...    ....
+	.#..    ....    ###.    .##.
+	....    ....    ....    ..##
+	
+The decision matrix (without first colomn) would be look like 
+    
 ![dlist](https://github.com/cghael/21_school_fillit/blob/master/dlist.jpg)
+
+
