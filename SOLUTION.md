@@ -216,7 +216,7 @@ Now we do it whith all other column with A
 	
 Oops! We lost all rows with name = 'D'. Thats wrong. Our program should notice this and decide, that the row, that we chose this time as the solution is not suitable. We go back, uncover all covered rows and choose another row with the same name (in our case it's 'A').
 
-And thats the main algo. We finished, when goal_row->down->name = '!', because this is the name of one single node - the root first node. And if we reach this node, we find the decision.
+And thats the main algo. We finished, when goal_row->name = '!', because this is the name of one single node - the root first node. And if we reach this node, we find the decision.
 
 Decision of our example looks like
 
