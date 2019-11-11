@@ -76,7 +76,7 @@ In our example it will be
 
         side = √(2 * 4) = 2.8 = 3
         
-So we will statr from side = 3 and if theraminos doesn't fit in there, then increase the side.
+So we will statr from side = 3 and if tetraminos doesn't fit in there, then increase the side.
 
 ## Creating decision list
 
