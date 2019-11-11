@@ -5,7 +5,7 @@ Program takes a file as parameter, which contains a list of Tetriminos, and arra
 
 A ***Tetriminos*** is a 4-blocks geometric figure you probably already heard of, thanks to the popular game Tetris.
 
-![Tetrimino](https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/All_5_free_tetrominoes.svg/2560px-All_5_free_tetrominoes.svg.png)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/All_5_free_tetrominoes.svg/2560px-All_5_free_tetrominoes.svg.png" width="400">
 
 ## Instuctions
 
