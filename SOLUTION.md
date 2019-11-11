@@ -80,3 +80,23 @@ So we will statr from side = 3 and if tetraminos doesn't fit in there, then incr
 
 ## Creating decision list
 
+Here our algorithm has discrepancies with the Knut algorithm. Knut suggests working mainly with columns. We decided that for our task it would be more convenient to work with rows.
+
+Therefore, we are creating a slightly modified decision matrix. Add another vertical column with head nodes of the rows. In the head we keep the number of the row.
+
+For the decision matrix, we used the following structure
+
+    typedef struct			s_dest
+    {
+	    char		        name;
+	    struct s_dest		*head;
+	    struct s_dest		*left;
+	    struct s_dest		*right;
+	    struct s_dest		*up;
+	    struct s_dest		*down;
+	    int			        x;
+	    int			        y;
+	    int			        line;
+    }				t_dest;
+    
+![dlist](https://github.com/cghael/21_school_fillit/blob/master/dlist.jpg)
