@@ -48,3 +48,35 @@ For example, if income tetrimino came in any of this ways
     ####    ....    ....    ....
     ....    ....    ....    ####
     
+it coords will be saved as
+
+        x {0, 1, 2, 3}
+        y {0, 0, 0, 0}
+        
+## Side of the square
+
+To speed up the search, we will not start with a 2x2 square. For example, we can say for sure that if we got 2 pieces, then they won’t fit into a 2x2 square. But maybe they get down to a 3x3 square? For example, in the case when input is
+
+        .###    ....
+        ...#    #...
+        ....    ###.
+        ....    ....
+        
+The solution will be
+
+        AAA
+        B.A
+        BBB
+        
+So to find the smalest side to start the search from, we use area covered by tetramines
+
+        side = √(N_tetrimino * 4) rounded up
+        
+In our example it will be
+
+        side = √(2 * 4) = 2.8 = 3
+        
+So we will statr from side = 3 and if theraminos doesn't fit in there, then increase the side.
+
+## Creating decision list
+
