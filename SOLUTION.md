@@ -33,7 +33,7 @@ We decided to save tetrimino in the list:
 
     typedef struct			s_tet
     {
-      char				name;
+            char		        name;
     	int                     x[4];
     	int			y[4];
     	struct s_tet		*next;
