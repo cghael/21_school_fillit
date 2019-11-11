@@ -28,3 +28,23 @@ So we read buf from file, check it and then we can save it. Buf by buf.
 *PSS. And about usage.*
 
 ## Saving tetrimino
+
+We decided to save tetrimino in the list:
+
+    typedef struct			s_tet
+    {
+      char				name;
+    	int                     x[4];
+    	int			y[4];
+    	struct s_tet		*next;
+    }				t_tet;
+    
+For each tetrimino we create new node. And for each tetrimino we adjust the coordinates so that the tetrimino itself appears to be in the upper left corner of the 4x4 square.
+
+For example, if income tetrimino came in any of this ways
+
+    ....    ####    ....    ....
+    ....    ....    ####    ....
+    ####    ....    ....    ....
+    ....    ....    ....    ####
+    
