@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cghael <cghael@student.42.fr>              +#+  +:+       +#+         #
+#    By: cghael <marvin@42.fr> 	                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/02 13:56:52 by cghael            #+#    #+#              #
 #    Updated: 2019/11/12 15:43:14 by cghael           ###   ########.fr        #
