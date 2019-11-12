@@ -37,7 +37,7 @@ For example, if we have file with:
     #...    ..##
     #...    ..##
     
-The uotput of the program must be:
+The output of the program must be:
 
     ABB.
     ABB.
