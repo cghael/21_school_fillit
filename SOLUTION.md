@@ -5,7 +5,7 @@ But since this algorithm is designed to solve the problems of full coverage, we 
 
 #### Why we decided to use this algo instead of simply brute force?
 
-Well, because it's interesting, it's faster and we decided, that if we will do it, we will be gurus in understanding lists. 
+Well, because it's interesting, it's faster and we decided, that if we will do it, we will be gurus in linked lists. 
 
 ### Decision steps
 
@@ -136,7 +136,7 @@ First of all we cower all rows with name = 'A'. Because other decisions of this 
 	........DD...DD.
 	.........DD...DD
 	
-Now we cover all the rows in which the letter is in the same position as the row that we chose for the solution. We start from the first column A and go down. When we done with this column matrix will be look like
+Now we cover all the rows in which the letter is in the same position as the row that we chose for the solution. We start from the first column A and go down. When we done with this column, matrix start looks like
 
 	AA...A...A......
 	BBBB............ <- cover
@@ -214,12 +214,14 @@ Now we do it whith all other column with A
 	............BBBB
 	........C...CCC.
 	
-Oops! We lost all rows with name = 'D'. Thats wrong. Our program should notice this and decide, that the row, that we chose this time as the solution is not suitable. We go back, uncover all covered rows and choose another row with the same name (in our case it's 'A').
+Oops! We lost all rows with name = 'D'. Thats wrong. Our program should notice this and decide, that the row, that has been chosen this time as the solution, is not suitable. We go back, uncover all covered rows and choose another row with the same name (in our case it's 'A').
 
 And thats the main algo. We finished, when goal_row->name = '!', because this is the name of one single node - the root first node. And if we reach this node, we find the decision.
 
 Decision of our example looks like
 
 <img src="https://github.com/cghael/21_school_fillit/blob/master/dlist2.jpg" width="300">
+
+Now we need to print the decision and free all lists.
 
 That's all. Thanks!
