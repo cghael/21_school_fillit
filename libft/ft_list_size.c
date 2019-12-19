@@ -15,13 +15,11 @@
 size_t	ft_list_size(t_list *begin_list)
 {
 	size_t	counter;
-	t_list	*tmp;
 
 	if (!begin_list)
 		return (0);
 	else
 	{
-		tmp = begin_list;
 		counter = 1;
 		while (begin_list->next)
 		{
