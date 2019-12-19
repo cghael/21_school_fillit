@@ -16,7 +16,7 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-LDFLAGS = -L./libft
+LDFLAGS = -Llibft
 
 LDLIBS = -lft
 
@@ -54,8 +54,8 @@ HEAD = ./
 all: $(NAME)
 
 $(NAME): $(OBJ_NAME)
-	@make -C ./libft
-	@$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) -I $(HEAD) $(addprefix $(OBJ), $^) -o $@
+	@make -C libft
+	@$(CC) $(CFLAGS) -I $(HEAD) $(addprefix $(OBJ), $^) $(LDFLAGS) $(LDLIBS)  -o $@
 	@echo "\033[0;32mfillit's program created.\033[0m"
 
 %.o: $(SRC)%.c
